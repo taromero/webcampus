@@ -1,6 +1,8 @@
 package wc.domain
 
-abstract class User {
+import wc.security.SecUser;
+
+abstract class User extends SecUser{
 
 	static hasMany = [notifications: Notification]
 	

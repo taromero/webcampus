@@ -95,3 +95,7 @@ log4j = {
 grails.gorm.default.constraints = {
 	'*'(blank:false)
 }
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'wc.security.SecUser'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'wc.security.SecUserRole'
+grails.plugins.springsecurity.authority.className = 'wc.security.Role'
