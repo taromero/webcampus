@@ -6,6 +6,6 @@ class RegularCourse extends Course{
 	String division
 
 	static constraints = {
-		anio matches: [0-9]
+		anio matches: '[0-9]'
 	}
 }

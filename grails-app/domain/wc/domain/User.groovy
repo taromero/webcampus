@@ -1,6 +1,6 @@
 package wc.domain
 
-class User {
+abstract class User {
 
 	static hasMany = [notifications: Notification]
 	
