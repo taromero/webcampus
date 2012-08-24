@@ -20,6 +20,10 @@ class SecUser {
 		password column: '`password`'
 	}
 
+	def SecUser(){
+		enabled = true
+	}
+	
 	Set<Role> getAuthorities() {
 		SecUserRole.findAllBySecUser(this).collect { it.role } as Set
 	}
