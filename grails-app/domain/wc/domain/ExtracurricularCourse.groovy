@@ -1,6 +1,6 @@
 package wc.domain
 
-class ExtracurricularCourse {
+class ExtracurricularCourse extends Course{
 
 	String name
 }

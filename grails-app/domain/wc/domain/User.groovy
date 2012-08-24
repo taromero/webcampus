@@ -1,10 +1,11 @@
 package wc.domain
 
-abstract class User {
+import wc.security.SecUser;
+
+abstract class User extends SecUser{
 
 	static hasMany = [notifications: Notification]
 	
-	String email
 	String firstName
 	String lastName
 	Date birthDate
@@ -16,7 +17,6 @@ abstract class User {
 	Long docNumber
 
 	static constraints = {
-		email email: true, unique: true
 		firstName matches: '[a-zA-ZñÑ]+'
 		lastName matches: '[a-zA-ZñÑ]+'
 		homePhone matches: '[0-9-]+'

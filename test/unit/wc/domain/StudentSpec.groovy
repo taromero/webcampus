@@ -1,7 +1,7 @@
 package wc.domain
 
 import grails.buildtestdata.mixin.Build;
-import grails.test.mixin.TestFor;
+import grails.test.mixin.*
 import spock.lang.Specification;
 
 @TestFor(Student)
@@ -10,10 +10,10 @@ class StudentSpec extends Specification{
 	
 	def 'it should not allow students with wrong mails'(){
 		given:
-			Student Student = Student.build();
-			Student.email = email
+			Student student = Student.build();
+			student.email = email
 		when:
-			Student.save(failOnError:true, flush:true)
+			student.save(failOnError:true, flush:true)
 		then:
 			thrown(Exception)
 		where:
