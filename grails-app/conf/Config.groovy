@@ -99,3 +99,6 @@ grails.gorm.default.constraints = {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'wc.security.SecUser'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'wc.security.SecUserRole'
 grails.plugins.springsecurity.authority.className = 'wc.security.Role'
+
+
+grails.plugins.springsecurity.userLookup.usernamePropertyName = 'email'

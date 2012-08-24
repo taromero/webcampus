@@ -4,7 +4,7 @@ class SecUser {
 
 	transient springSecurityService
 
-	String username
+	String email
 	String password
 	boolean enabled
 	boolean accountExpired
@@ -12,7 +12,7 @@ class SecUser {
 	boolean passwordExpired
 
 	static constraints = {
-		username blank: false, unique: true
+		email email:true, blank: false, unique: true
 		password blank: false
 	}
 
@@ -39,6 +39,8 @@ class SecUser {
 	}
 
 	protected void encodePassword() {
-		password = springSecurityService.encodePassword(password)
+		if(springSecurityService){
+			password = springSecurityService.encodePassword(password)
+		}
 	}
 }
