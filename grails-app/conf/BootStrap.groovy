@@ -13,7 +13,8 @@ class BootStrap {
 				if(dbCreateProperty == 'create' || dbCreateProperty == 'create-drop'){
 					def adminRole = Role.findByAuthority('ADMIN') ?: new Role(authority: 'ADMIN').save(failOnError: true)
 					
-					def student = Student.build()
+					Student student = Student.build()
+					student.email = 'a@tomy.com'
 					student.password = 'p'
 					student.save()
 					SecUserRole.create student, adminRole

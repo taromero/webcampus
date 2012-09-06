@@ -2,5 +2,5 @@ package wc.domain
 
 class ExtracurricularCourse extends Course{
 
-	String name
+	String name //no va
 }
