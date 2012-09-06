@@ -1,8 +1,7 @@
 package wc.domain
 
-import grails.buildtestdata.mixin.Build;
-import grails.test.mixin.*
-import spock.lang.Specification;
+import grails.buildtestdata.mixin.Build
+import spock.lang.Specification
 
 @TestFor(Student)
 @Build(Student)
