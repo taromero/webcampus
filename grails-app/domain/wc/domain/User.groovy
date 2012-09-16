@@ -21,5 +21,6 @@ abstract class User extends SecUser{
 		lastName matches: '[a-zA-ZñÑ]+'
 		homePhone matches: '[0-9-]+'
 		sex inList:['M', 'F'], editable:false
+		docNumber unique:true
 	}
 }
