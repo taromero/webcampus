@@ -51,5 +51,6 @@ grails.project.dependency.resolution = {
 		test ":spock:0.6"
 		compile ":build-test-data:2.0.3"
 		compile ":spring-security-core:1.2.7.3"
+		compile ":hibernate-filter:0.3.2"
     }
 }
