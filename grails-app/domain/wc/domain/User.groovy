@@ -15,7 +15,7 @@ abstract class User extends SecUser{
 	String mobilePhone
 	String docType
 	Long docNumber
-
+	
 	static constraints = {
 		firstName matches: '[a-zA-ZñÑ]+'
 		lastName matches: '[a-zA-ZñÑ]+'
