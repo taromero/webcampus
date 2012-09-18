@@ -1,5 +1,6 @@
 import wc.domain.Student
 import wc.security.Role
+import wc.security.SecUser
 import wc.security.SecUserRole
 
 class BootStrap {
@@ -7,7 +8,11 @@ class BootStrap {
 	def grailsApplication
 	
     def init = { servletContext ->
+		Student.enableHibernateFilter('deletedFilter')
 		environments {
+			test{
+				
+			}
 			development {
 				def dbCreateProperty = grailsApplication.config.dataSource.dbCreate
 				if(dbCreateProperty == 'create' || dbCreateProperty == 'create-drop'){
@@ -18,10 +23,11 @@ class BootStrap {
 					student.password = 'p'
 					student.save()
 					SecUserRole.create student, adminRole
+					Student.build(lowDate: new Date())
 				}
 			}
 			production {
-	
+				
 			}
 		}
     }

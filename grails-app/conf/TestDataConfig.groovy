@@ -2,8 +2,9 @@ testDataConfig {
     sampleData {
 		'wc.domain.Student' {
 			def i = 0
-			docNumber = { "${i++}" }
-			email = {-> "a${i++}@b.com" }
+			docNumber = { i++ } 
+			email = { "a${i++}@b.com" }
+			lowDate = null
 		}
     }
 }
