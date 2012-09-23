@@ -1,126 +1,116 @@
 <html>
 <head>
-	<meta name='layout' content='main'/>
+	<g:render template="/common/scripts"/>
 	<title><g:message code="springSecurity.login.title"/></title>
-	<style type='text/css' media='screen'>
-	#login {
-		margin: 15px 0px;
-		padding: 0px;
-		text-align: center;
-	}
-
-	#login .inner {
-		width: 340px;
-		padding-bottom: 6px;
-		margin: 60px auto;
-		text-align: left;
-		border: 1px solid #aab;
-		background-color: #f0f0fa;
-		-moz-box-shadow: 2px 2px 2px #eee;
-		-webkit-box-shadow: 2px 2px 2px #eee;
-		-khtml-box-shadow: 2px 2px 2px #eee;
-		box-shadow: 2px 2px 2px #eee;
-	}
-
-	#login .inner .fheader {
-		padding: 18px 26px 14px 26px;
-		background-color: #f7f7ff;
-		margin: 0px 0 14px 0;
-		color: #2e3741;
-		font-size: 18px;
-		font-weight: bold;
-	}
-
-	#login .inner .cssform p {
-		clear: left;
-		margin: 0;
-		padding: 4px 0 3px 0;
-		padding-left: 105px;
-		margin-bottom: 20px;
-		height: 1%;
-	}
-
-	#login .inner .cssform input[type='text'] {
-		width: 120px;
-	}
-
-	#login .inner .cssform label {
-		font-weight: bold;
-		float: left;
-		text-align: right;
-		margin-left: -105px;
-		width: 110px;
-		padding-top: 3px;
-		padding-right: 10px;
-	}
-
-	#login #remember_me_holder {
-		padding-left: 120px;
-	}
-
-	#login #submit {
-		margin-left: 15px;
-	}
-
-	#login #remember_me_holder label {
-		float: none;
-		margin-left: 0;
-		text-align: left;
-		width: 200px
-	}
-
-	#login .inner .login_message {
-		padding: 6px 25px 20px 25px;
-		color: #c33;
-	}
-
-	#login .inner .text_ {
-		width: 120px;
-	}
-
-	#login .inner .chk {
-		height: 12px;
-	}
-	</style>
 </head>
 
-<body>
-<div id='login'>
-	<div class='inner'>
-		<div class='fheader'><g:message code="springSecurity.login.header"/></div>
-
-		<g:if test='${flash.message}'>
-			<div class='login_message'>${flash.message}</div>
-		</g:if>
-
-		<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
-			<p>
-				<label for='username'><g:message code="springSecurity.login.username.label"/>:</label>
-				<input type='text' class='text_' name='j_username' id='username'/>
-			</p>
-
-			<p>
-				<label for='password'><g:message code="springSecurity.login.password.label"/>:</label>
-				<input type='password' class='text_' name='j_password' id='password'/>
-			</p>
-
-			<p id="remember_me_holder">
-				<input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
-				<label for='remember_me'><g:message code="springSecurity.login.remember.me.label"/></label>
-			</p>
-
-			<p>
-				<input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
-			</p>
-		</form>
+<body class="login">
+	<!-- The loading box -->
+	<div id="loading-overlay"></div>
+	<div id="loading">
+		<span>Loading...</span>
 	</div>
-</div>
-<script type='text/javascript'>
+	
+	<!-- The toolbar at the top -->
+	<section id="toolbar">
+		<div class="container_12">
+		
+			<!-- Left side -->
+			<div class="left">
+				<ul class="breadcrumb">
+				
+					<li><a href="javascript:void(0);">Mango</a></li>
+					<li><a href="javascript:void(0);">Login</a></li>
+					
+				</ul>
+			</div>
+			<!-- End of .left -->
+			
+			<!-- Phone only items -->
+			<div class="phone">
+				
+				<!-- User Link -->
+				<li><a href="#"><span class="icon icon-home"></span></a></li>
+				<!-- Navigation -->
+				<li><a href="#"><span class="icon icon-heart"></span></a></li>
+			
+			</div><!-- End of .phone -->
+			
+		</div><!-- End of .container_12 -->
+    </section><!-- End of #toolbar -->
+
+	<!-- The header containing the logo -->
+	<header class="container_12">	
+		<div class="container">
+			<!-- Your logos -->
+			
+			<a href="#"><img src="${resource(dir: 'images', file: 'logo.png')}" alt="Mango" width="210" height="67"></a>
+			<a class="phone-title" href="login.html"><img src="${resource(dir: 'images', file: 'logo-mobile.png')}" alt="Mango" height="22" width="70" /></a>
+		</div><!-- End of .container -->	
+	</header><!-- End of header -->
+	
+	<!-- The container of the sidebar and content box -->
+	<section id="login" class="container_12 clearfix">
+		<form action='${postUrl}' method='post' class='box validate'>
+			<div class="header">
+				<h2><span class="icon icon-lock"></span>Login</h2>
+			</div>
+			
+			<div class="content">
+				<!-- Login messages -->
+				<div class="login-messages">
+					<g:if test='${flash.message}'>
+						<div class="message failure">${flash.message}</div>
+					</g:if>
+				</div>				
+				
+				<!-- The form -->
+				<div class="form-box">			
+					
+					<div class="row">
+						<label for="login_name">
+							<strong><g:message code="springSecurity.login.username.label"/></strong>
+						</label>
+						<div>
+							<input tabindex=1 type="text" class="required noerror" name='j_username' id=login_name />
+						</div>
+					</div>
+					
+					<div class="row">
+						<label for="login_pw">
+							<strong><g:message code="springSecurity.login.password.label"/></strong>
+							<small><a href="#" id="">Olvidé mi contraseña</a></small>
+						</label>
+						<div>
+							<input tabindex=2 type="password" class="required noerror" name=j_password id=login_pw />
+						</div>
+					</div>
+															
+				</div><!-- End of .form-box -->				
+			</div><!-- End of .content -->
+			
+			<div class="actions">
+				<div class="left">
+					<div class="rememberme">				
+						<input tabindex=4 type="checkbox" name='${rememberMeParameter}' id="login_remember" <g:if test='${hasCookie}'>checked='checked'</g:if>/>
+						<label for="login_remember"><g:message code="springSecurity.login.remember.me.label"/></label>
+					</div>
+				</div>
+				<div class="right">
+					<input tabindex=3 type="submit" value='${message(code: "springSecurity.login.button")}' name="login_btn" />
+				</div>
+			</div><!-- End of .actions -->
+			
+		</form><!-- End of form -->
+		
+	</section>
+	<script type='text/javascript'>
+	$$.loaded();
 	<!--
 	(function() {
 		document.forms['loginForm'].elements['j_username'].focus();
 	})();
 	// -->
-</script>
+	</script>
 </body>
 </html>
