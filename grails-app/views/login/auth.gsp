@@ -57,10 +57,8 @@
 			</div>
 			
 			<div class="content">
-				
 				<!-- Login messages -->
 				<div class="login-messages">
-					<div class="message welcome">Bienvenido</div>
 					<g:if test='${flash.message}'>
 						<div class="message failure">${flash.message}</div>
 					</g:if>
