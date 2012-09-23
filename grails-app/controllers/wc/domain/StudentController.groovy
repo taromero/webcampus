@@ -7,7 +7,7 @@ import org.springframework.dao.DataIntegrityViolationException
 @Secured('ADMIN')
 class StudentController {
 
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    static allowedMethods = [save: "POST", update: "POST"]
 
     def index() {
         redirect(action: "list", params: params)

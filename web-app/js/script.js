@@ -1942,7 +1942,6 @@
 		]);
 		
 		mango.utils.preload([
-			'images/external/colorpicker/blank.gif',
 			'images/external/colorpicker/colorpicker_background.png',
 			'images/external/colorpicker/colorpicker_hex.png',
 			'images/external/colorpicker/colorpicker_hsb_b.png',
