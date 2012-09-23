@@ -164,42 +164,6 @@
 						<li><a href="#">Logout</a></li>
 					</ul>
 				</div>
-				<ul class="shortcuts">
-							
-					<li>
-						<a href="javascript:void(0);"><span class="icon i24_user-business"></span></a>
-						<!-- Possible sizes: small/medium/large -->
-						<div class="small">
-							<h3>Create a User</h3>
-							
-							<!-- Button bar -->
-							<button class="button flat left grey" onclick="$(this).parent().fadeToggle($$.config.fxSpeed).parent().removeClass('active')">Close</button>
-							<button class="button flat right" onclick="$(this).parent().fadeToggle($$.config.fxSpeed).parent().removeClass('active')">Create</button>
-							
-							<div class="content">
-								<form class="full grid">
-									<div class="row no-bg">
-										<p class="_100 small">
-											<label for="p1_username">Username</label>
-											<input type="text" name=p1_username id=p1_username />
-										</p>
-									</div>
-									<div class="row no-bg">
-										<p class="_50 small">
-											<label for="p1_firstname">Firstname</label>
-											<input type="text" name=p1_firstname id=p1_firstname />
-										</p>
-										<p class="_50 small">
-											<label for="p1_lastname">Lastname</label>
-											<input type="text" name=p1_lastname id=p1_lastname />
-										</p>
-									</div>
-								</form>
-							</div>
-						</div><!-- End of popup -->
-					</li>					
-				</ul><!-- End of .shortcuts -->
-				
 				<input type="search" data-source="extras/search.php" placeholder="Search..." autocomplete="off" class="tooltip" title="e.g. Peach" data-gravity=s>
 			</section><!-- End of .toolbar-->
 			<!-- The sidebar -->
@@ -209,7 +173,7 @@
 					<!-- Navigation -->
 					<nav><ul class="collapsible accordion">
 					
-						<li class="current"><a href="dashboard.html"><img src="${resource(dir: 'images/icons/packs/fugue/16x16', file: 'dashboard.png')}" alt="" height=16 width=16/>Dashboard</a></li>
+						<li><a href="dashboard.html"><img src="${resource(dir: 'images/icons/packs/fugue/16x16', file: 'dashboard.png')}" alt="" height=16 width=16/>Dashboard</a></li>
 						
 						<li>
 							<a href="javascript:void(0);"><img src="${resource(dir: 'images/icons/packs/fugue/16x16', file: 'ui-layered-pane.png')}" alt="" height=16 width=16/>Alumnos</a>

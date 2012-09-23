@@ -24,6 +24,13 @@ class BootStrap {
 					student.save()
 					SecUserRole.create student, adminRole
 					Student.build(lowDate: new Date())
+					
+					Student student2 = Student.build()
+					student2.email = 'a@b.com'
+					student2.password = 'p'
+					student2.save()
+					SecUserRole.create student2, adminRole
+					Student.build(lowDate: new Date())
 				}
 			}
 			production {

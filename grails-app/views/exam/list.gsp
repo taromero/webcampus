@@ -1,4 +1,3 @@
-
 <%@ page import="wc.domain.Exam" %>
 <!doctype html>
 <html>
@@ -12,10 +11,12 @@
 			<span><g:message code="default.list.label" args="[entityName]" /></span>
 		</h1>
 		<div class="grid_12">
+			
 			<div class="box">
 				<div class="header">
 					<h2><g:message code="default.list.label" args="[entityName]" /></h2>
 				</div>
+				
 				<div class="content">
 					<table class="styled">
 						<thead>
@@ -35,15 +36,18 @@
 								<td><g:formatDate date="${exam.examDate}" /></td>
 								<td>${fieldValue(bean: exam, field: "student")}</td>
 								<td class="center">
-									<a href="#" class="button small grey tooltip" data-gravity=s title="Edit"><i class="icon-pencil"></i></a>
-									<a href="#" class="button small grey tooltip" data-gravity=s title="Remove"><i class="icon-remove"></i></a>
+									<a href="#" class="button small grey tooltip" data-gravity=s title="Editar"><i class="icon-pencil"></i></a>
+									<a href="#" class="button small grey tooltip" data-gravity=s title="Eliminar"><i class="icon-remove"></i></a>
 								</td>
 							</tr>
 						</g:each>
 						</tbody>
-					</table>
-				</div>	
+					</table>	
+				</div>
 			</div>
+			<a href="${createLink(action:'create')}" class="button grey block">
+				<span class="icon icon-plus"></span><g:message code="exam.create.label"/>
+			</a>
 		</div>		
 	</body>
 </html>
