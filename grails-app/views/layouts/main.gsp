@@ -209,7 +209,7 @@
 					<!-- Navigation -->
 					<nav><ul class="collapsible accordion">
 					
-						<li class="current"><a href="dashboard.html"><img src="${resource(dir: 'images/icons/packs/fugue/16x16', file: 'dashboard.png')}" alt="" height=16 width=16/>Dashboard</a></li>
+						<li><a href="dashboard.html"><img src="${resource(dir: 'images/icons/packs/fugue/16x16', file: 'dashboard.png')}" alt="" height=16 width=16/>Dashboard</a></li>
 						
 						<li>
 							<a href="javascript:void(0);"><img src="${resource(dir: 'images/icons/packs/fugue/16x16', file: 'ui-layered-pane.png')}" alt="" height=16 width=16/>Alumnos</a>
