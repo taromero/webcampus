@@ -234,7 +234,7 @@ header .phone-title {
 	top: 8px;
 	right: 8px;
 	
-	content: 'â–¼';
+	content: '▼';
 	
 	font-size: 10px;
 	text-shadow: 0 1px 0 #000;
@@ -249,7 +249,7 @@ header .phone-title {
 }
 
 #main .toolbar .user.clicked > span:after {
-	content: 'â–²';
+	content: '▲';
 	color: #676767;
 	cursor: pointer;
 }
@@ -1036,7 +1036,7 @@ aside nav > ul > li:last-child > ul li:last-child {
 }
 
 aside nav > ul > li > ul a:before {
-	content: 'â–º';
+	content: 'Ã¢â€“Âº';
 	color: #becadb;
 	text-shadow: none;
 	margin-right: 5px;
@@ -1098,7 +1098,7 @@ aside nav a.with_sub:after {
 	right: 6px;
 	top: 0px;
 	
-	content: 'â–¼';
+	content: '▼';
 	
 	font-size: 10px;
 	color: #8f8f8f;
@@ -1109,7 +1109,7 @@ aside nav a.with_sub:hover:after {
 }
 
 aside nav a.with_sub.open:after {
-	content: 'â–²';
+	content: '▲';
 }
 
 
