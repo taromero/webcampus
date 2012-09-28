@@ -109,7 +109,9 @@
 						
 						<li><a href="javascript:void(0);" id="btn-lock"><span>--:--</span>Lock screen</a></li>
 						
-						<li class="red"><a href="login.html">Logout</a></li>
+						<sec:ifNotLoggedIn>
+							<li class="red"><a href="login.html">Logout</a></li>
+						</sec:ifNotLoggedIn>			
 						
 					</ul>
 				</div><!-- End of .right -->
@@ -156,7 +158,12 @@
 						<img src="${resource(dir: 'images/layout/content/toolbar/user', file: 'avatar.png')}"/>
 						<span>3</span>
 					</div>
-					<span>Administrator</span>
+					<sec:ifLoggedIn>
+					   <span><sec:username/></span>
+					</sec:ifLoggedIn>
+					<sec:ifNotLoggedIn>
+					   <span>Invitado</span>
+					</sec:ifNotLoggedIn>
 					<ul>
 						<li><a href="javascript:$$.settings();">Settings</a></li>
 						<li><a href="#">Profile</a></li>
